@@ -1,4 +1,4 @@
-.malzeme-ekle {
+.ingredient-add {
     border: 0;
     padding: 15px;
     background: green;
@@ -9,7 +9,7 @@
     cursor: pointer;
 }
 
-.malzeme-cikar {
+.ingredient-remove {
     border: 0;
     padding: 15px;
     background: red;
@@ -20,7 +20,21 @@
     cursor: pointer;
 }
 
-.malzeme-cikar.disabled {
+.ingredient-remove.disabled {
     background: #c3bfff;
     pointer-events: none;
+}
+
+li {
+   display: flex; 
+}
+
+.menu-ingredient {
+   flex: 1;
+   margin-right: 1rem;
+}
+
+.total-price {
+    font-weight: bold;
+    font-size: 1.3rem;
 }

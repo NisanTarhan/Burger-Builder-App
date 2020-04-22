@@ -1,4 +1,4 @@
-const malzemeler = [
+const ingredientMockData = [
     {
         id: 1,
         name: "Marul",
@@ -29,4 +29,4 @@ const malzemeler = [
     }
 ];
 
-export default malzemeler;
+export default ingredientMockData;

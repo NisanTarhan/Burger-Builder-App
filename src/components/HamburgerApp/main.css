@@ -1,0 +1,13 @@
+.container {
+    display: grid;
+    grid-template-rows: 3fr 75px 2fr;
+}
+
+.container > h2 {
+    place-self: center;
+}
+
+.container > ul {
+    place-self: center;
+    padding-right: 2rem;
+}
