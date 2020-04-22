@@ -14,8 +14,8 @@ class HamburgerApp extends Component {
     }
 
     addIngredient = (ingredient) => {
-        const varMi = this.state.chosenIngredients.find((chosen) => chosen.id === ingredient.id);
-        if (varMi) {
+        const isThereIngredient = this.state.chosenIngredients.find((chosen) => chosen.id === ingredient.id);
+        if (isThereIngredient) {
             this.setState({
                 chosenIngredients: this.state.chosenIngredients.map((chosen) => {
                     if (chosen.id === ingredient.id) {
