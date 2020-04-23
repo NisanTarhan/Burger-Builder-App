@@ -58,16 +58,20 @@ class HamburgerApp extends Component {
         }, 0)
     }
 
+    removeAllIngredients = () => this.setState({ chosenIngredients: [] })
+
     render() {
         const { chosenIngredients } = this.state;
+        const totalOfPrice = this.sumPrice();
         return (
             <div className="container">
-                <Hamburger chosenIngredients={chosenIngredients} totalPrice={this.state.totalOfPrice} />
+                <Hamburger chosenIngredients={chosenIngredients} />
                 <MenuList
                     chosenIngredients={chosenIngredients}
                     addIngredient={this.addIngredient}
                     removeIngredient={this.removeIngredient}
-                    sumPrice={this.sumPrice()}
+                    totalOfPrice={totalOfPrice}
+                    removeAllIngredients={this.removeAllIngredients}
                 />
             </div>
         );

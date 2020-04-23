@@ -3,28 +3,32 @@ import './menu.css';
 import ingredientMockData from "../../constants/ingredients";
 import ListItem from './ListItem';
 
-const MenuList = ({ chosenIngredients, addIngredient, removeIngredient, sumPrice }) => {
+const MenuList = ({ chosenIngredients, addIngredient, removeIngredient, totalOfPrice, removeAllIngredients }) => {
     return (
         <>
             <h2>Eklenecek Malzemeler</h2>
             <ul>
                 {
                     ingredientMockData.map((ingredient) => {
-                        const showDecreaseButton = chosenIngredients.find((chosen) => chosen.id === ingredient.id)
+                        const addedIngredient = chosenIngredients.find((chosen) => chosen.id === ingredient.id);
                         return <ListItem
                             key={ingredient.id}
                             ingredient={ingredient}
-                            chosenIngredients={chosenIngredients}
                             addIngredient={addIngredient}
                             removeIngredient={removeIngredient}
-                            showDecreaseButton={showDecreaseButton}
+                            addedIngredient={addedIngredient}
                         />
                     })
                 }
-                <p className="total-price">Toplam Fiyat: {sumPrice}</p>
+                <div style={{ display: "flex" }}>
+                    <p className="menu-total-price">Toplam Fiyat: {totalOfPrice}</p>
+                    <button onClick={removeAllIngredients}
+                        className="menu-delete-all-button">
+                        Hepsini Sil
+                    </button>
+                </div>
             </ul>
         </>
-
     )
 }
 

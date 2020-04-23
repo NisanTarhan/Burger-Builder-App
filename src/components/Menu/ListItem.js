@@ -1,8 +1,7 @@
 import React from 'react';
 import Buttons from './Buttons';
 
-const ListItem = ({ ingredient, chosenIngredients, addIngredient, removeIngredient, showDecreaseButton, getCountOfIngredient }) => {
-
+const ListItem = ({ ingredient, addIngredient, removeIngredient, addedIngredient }) => {
     return (
         <li>
             <p className="menu-ingredient">{ingredient.price}TL</p>
@@ -11,9 +10,9 @@ const ListItem = ({ ingredient, chosenIngredients, addIngredient, removeIngredie
                 ingredient={ingredient}
                 removeIngredient={removeIngredient}
                 addIngredient={addIngredient}
-                showDecreaseButton={showDecreaseButton}
+                addedIngredient={addedIngredient}
             />
-            <p></p>
+            <p className="menu-ingredient-count" >ADET: {addedIngredient?.count || 0}</p>
         </li>
     )
 }

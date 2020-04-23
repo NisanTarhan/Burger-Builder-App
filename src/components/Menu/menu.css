@@ -34,7 +34,20 @@ li {
    margin-right: 1rem;
 }
 
-.total-price {
+.menu-ingredient-count {
+    margin-left: 1rem;
+}
+
+.menu-total-price {
+    flex: 3;
     font-weight: bold;
     font-size: 1.3rem;
+}
+
+.menu-delete-all-button {
+   flex: 1;
+   height: 2.5rem; 
+   align-self: center;
+   background: red; 
+   color: white;
 }

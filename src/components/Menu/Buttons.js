@@ -1,7 +1,7 @@
 import React from 'react';
 import classnames from "classnames";
 
-const Buttons = ({ ingredient, addIngredient, removeIngredient, showDecreaseButton }) => {
+const Buttons = ({ ingredient, addIngredient, removeIngredient, addedIngredient }) => {
     return (
         <div>
             <button onClick={() => {
@@ -16,8 +16,8 @@ const Buttons = ({ ingredient, addIngredient, removeIngredient, showDecreaseButt
             }}
                 className={classnames({
                     "ingredient-remove": true,
-                    "disabled": !showDecreaseButton,
-                    "enabled": showDecreaseButton
+                    "disabled": !addedIngredient,
+                    "enabled": addedIngredient
                 })}>
                 Azalt
                 </button>
