@@ -6,10 +6,8 @@ import { MenuList } from '../Menu';
 class HamburgerApp extends Component {
     constructor(props) {
         super(props);
-
         this.state = {
             chosenIngredients: [],
-            totalOfPrice: 0
         }
     }
 
@@ -54,12 +52,14 @@ class HamburgerApp extends Component {
         }
     }
 
-    addTotalPrice = (price) => this.setState({ totalOfPrice: this.state.totalOfPrice + price });
-
-    subtractToralPrice = (price) => this.setState({ totalOfPrice: this.state.totalOfPrice - price });
+    sumPrice = () => {
+        return this.state.chosenIngredients.reduce((acc, curr) => {
+            return acc + curr.price * curr.count;
+        }, 0)
+    }
 
     render() {
-        const { chosenIngredients, totalOfPrice } = this.state;
+        const { chosenIngredients } = this.state;
         return (
             <div className="container">
                 <Hamburger chosenIngredients={chosenIngredients} totalPrice={this.state.totalOfPrice} />
@@ -67,9 +67,7 @@ class HamburgerApp extends Component {
                     chosenIngredients={chosenIngredients}
                     addIngredient={this.addIngredient}
                     removeIngredient={this.removeIngredient}
-                    addTotalPrice={this.addTotalPrice}
-                    subtractToralPrice={this.subtractToralPrice}
-                    totalOfPrice={totalOfPrice}
+                    sumPrice={this.sumPrice()}
                 />
             </div>
         );

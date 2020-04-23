@@ -3,7 +3,7 @@ import './menu.css';
 import ingredientMockData from "../../constants/ingredients";
 import ListItem from './ListItem';
 
-const MenuList = ({ chosenIngredients, addIngredient, removeIngredient, addTotalPrice, subtractToralPrice, totalOfPrice }) => {
+const MenuList = ({ chosenIngredients, addIngredient, removeIngredient, sumPrice }) => {
     return (
         <>
             <h2>Eklenecek Malzemeler</h2>
@@ -14,15 +14,14 @@ const MenuList = ({ chosenIngredients, addIngredient, removeIngredient, addTotal
                         return <ListItem
                             key={ingredient.id}
                             ingredient={ingredient}
+                            chosenIngredients={chosenIngredients}
                             addIngredient={addIngredient}
                             removeIngredient={removeIngredient}
                             showDecreaseButton={showDecreaseButton}
-                            addTotalPrice={addTotalPrice}
-                            subtractToralPrice={subtractToralPrice}
                         />
                     })
                 }
-                <p className="total-price">Toplam Fiyat: {totalOfPrice}</p>
+                <p className="total-price">Toplam Fiyat: {sumPrice}</p>
             </ul>
         </>
 
